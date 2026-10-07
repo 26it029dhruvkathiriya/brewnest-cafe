@@ -1,0 +1,292 @@
+/* ==========================================
+   1. INHERITANCE & BODY STYLING
+   ========================================== */
+/* Requirement 1: Set font-family and text color only once on body so all elements inherit them */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2b1f1d;
+    background-color: #fbf9f6;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   2. ELEMENT, CLASS, ID & DESCENDANT SELECTORS
+   ========================================== */
+/* Element Selector */
+h3 {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Class Selector */
+.section-title {
+    border-bottom: 2px solid #8e6f57;
+    padding-bottom: 10px;
+}
+
+/* ID Selector */
+#special-heading {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+/* Descendant Selector (Requirement 2) */
+/* Targetting only specific 'strong' element inside '.offer-box' container */
+.offer-box strong {
+    background-color: #ffeb3b;
+    padding: 2px 6px;
+    border-radius: 4px;
+    color: #000000;
+}
+
+/* ==========================================
+   3. SPECIFICITY DEMONSTRATION
+   ========================================== */
+/* Requirement 4: Give one element both a class rule and an id rule with different colors */
+.highlight-text {
+    color: #8e6f57; /* Light Taupe Brown */
+}
+
+#special-heading {
+    color: #4a2c11; /* Espresso Dark Brown */
+}
+
+/* 
+   SPECIFICITY EXPLANATION:
+   ID selector (#special-heading) ki specificity weight (0,1,0,0) hoti hai,
+   jo ki Class selector (.highlight-text) ke weight (0,0,1,0) se kahin zyada hai.
+   Is wajah se browser ID selector ki property ko apply karega aur primary text color Espresso Dark Brown (#4a2c11) dikhega.
+*/
+
+/* ==========================================
+   4. FLEXBOX HEADER
+   ========================================== */
+/* Requirement 5: Logo on left, navigation on right, and nav links in a row */
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4a2c11;
+    padding: 15px 5%;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.main-header .logo h2 {
+    margin: 0;
+}
+
+.nav-links {
+    display: flex; /* Nav links aligned horizontally in a row */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #f5efe6;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+/* ==========================================
+   5. CONTAINER LAYOUT (MAIN & ASIDE)
+   ========================================== */
+.container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 40px;
+}
+
+.main-content {
+    flex: 3;
+}
+
+.side-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.aside-box {
+    background-color: #f3ece4;
+    padding: 25px;
+    border-radius: 8px;
+    border-left: 5px solid #8e6f57;
+}
+
+.aside-box h4 {
+    margin-top: 0;
+    color: #4a2c11;
+}
+
+/* ==========================================
+   6. CSS GRID & BOX MODEL (MENU CARDS)
+   ========================================== */
+/* Requirement 6: Use CSS Grid to show menu cards in 3 columns on a laptop screen */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+/* Requirement 3: Style menu cards using box model properties */
+.menu-card {
+    background-color: #ffffff;
+    border: 1px solid #e1d6ca;          /* Border Box Model Property */
+    border-radius: 12px;                /* Border-radius Box Model Property */
+    padding: 15px;                      /* Padding Box Model Property */
+    margin-bottom: 15px;                /* Margin Box Model Property */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
+}
+
+/* Requirement 7: Images must not overflow on any screen */
+.menu-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+    max-width: 100%; /* Strict check against image overflow */
+}
+
+.card-info h4 {
+    margin: 15px 0 10px 0;
+    color: #4a2c11;
+}
+
+.card-info p {
+    font-size: 0.95rem;
+    color: #60524e;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-weight: bold;
+    color: #8e6f57;
+}
+
+/* ==========================================
+   7. RESERVATION FORM STYLING
+   ========================================== */
+.booking-section {
+    background-color: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    border: 1px solid #e1d6ca;
+    margin-top: 40px;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-weight: 500;
+}
+
+.form-group input {
+    padding: 12px;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+.btn-submit {
+    background-color: #8e6f57;
+    color: #ffffff;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #4a2c11;
+}
+
+/* ==========================================
+   8. FOOTER STYLING
+   ========================================== */
+/* Requirement 5: Footer with copyright line and two social-media links */
+.main-footer {
+    background-color: #2b1f1d;
+    color: #f5efe6;
+    text-align: center;
+    padding: 30px;
+    margin-top: 60px;
+}
+
+.social-links {
+    margin-top: 15px;
+}
+
+.social-links a {
+    color: #caa183;
+    margin: 0 12px;
+    text-decoration: none;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================
+   9. MEDIA QUERIES (RESPONSIVENESS)
+   ========================================== */
+
+/* Requirement 7a: At 992px or less the menu shows 2 columns */
+@media (max-width: 992px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Requirement 7b: At 600px or less it shows 1 column, nav links stack vertically, and <aside> moves below */
+@media (max-width: 600px) {
+    /* 1 column grid layout */
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Header dynamic flex tracking to wrap elements vertically */
+    .main-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Nav links align inside a vertical stack column */
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    /* Flex wrapper configuration to push the <aside> layer below the primary main layout block */
+    .container {
+        flex-direction: column;
+    }
+}
